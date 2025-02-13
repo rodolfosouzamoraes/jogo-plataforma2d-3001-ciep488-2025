@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class DireitaPlayer : MonoBehaviour
+public class LimitePlayer : MonoBehaviour
 {
-    public bool limiteDireita;
+    public bool estaNoLimite;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 6)
         {
-            limiteDireita = true;
+            estaNoLimite = true;
         }
     }
 
@@ -16,7 +16,7 @@ public class DireitaPlayer : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            limiteDireita = false;
+            estaNoLimite = false;
         }
     }
 }
