@@ -435,9 +435,10 @@ MonoBehaviour:
   flipCorpo: {fileID: 306833466}
   limiteDireita: {fileID: 136065932}
   limiteEsquerda: {fileID: 772263731}
-  limitePe: {fileID: 0}
+  limitePe: {fileID: 781512725}
+  rigidbody2d: {fileID: 272124246}
   velocidade: 5
-  forcaDoPuloY: 0
+  forcaDoPuloY: 1.5
 --- !u!50 &272124246
 Rigidbody2D:
   serializedVersion: 5
