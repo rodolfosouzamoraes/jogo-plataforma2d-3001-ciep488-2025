@@ -7,12 +7,16 @@ public class MovimentarPlayer : MonoBehaviour
     public LimitePlayer limiteDireita;
     public LimitePlayer limiteEsquerda;
     public LimitePlayer limitePe;
+    public LimitePlayer limiteCabeca;
     public Rigidbody2D rigidbody2d;
+
     public float velocidade; //Velocidade de movimentação do jogador
 
     public float forcaDoPuloY; //Força do pulo no eixo Y
+    private float forcaDoPuloX; //Força do pulo no eixo X
     private bool estaPulando; //Diz se o Player está em modo de pulo
     private bool puloDuplo; //Permite o personagem efetuar um pulo duplo
+    private bool pularDaParede = true; //Permite pular da parede
     private Coroutine coroutinePulo; //Contador de tempo para poder limitar o pulo do Player
 
     // Update is called once per frame
@@ -20,6 +24,7 @@ public class MovimentarPlayer : MonoBehaviour
     {
         Movimentar();
         Pular();
+        PularDaParede();
     }
 
     /// <summary>
@@ -68,6 +73,21 @@ public class MovimentarPlayer : MonoBehaviour
                 //Ativar o tempo do pulo
                 AtivarTempoPulo();
             }
+            else
+            {
+                //Verificar se está apto a fazer um segundo pulo
+                if(puloDuplo == true)
+                {
+                    //Habilitar novamente o pulo
+                    estaPulando = true;
+
+                    //Desabilitar o pulo duplo
+                    puloDuplo = false;
+
+                    //Ativar o tempo de pulo novamente
+                    AtivarTempoPulo();
+                }
+            }
         }
 
         EfetuarPulo();
@@ -81,17 +101,21 @@ public class MovimentarPlayer : MonoBehaviour
         //Verificar se o player pode subir
         if(estaPulando == true)
         {
-            //Zerar as forças do rigidbody2D
-            rigidbody2d.linearVelocity = Vector3.zero;
+            //Verificar se a cabeça esta no limite
+            if (limiteCabeca.estaNoLimite == false)
+            {
+                //Zerar as forças do rigidbody2D
+                rigidbody2d.linearVelocity = Vector3.zero;
 
-            //Alterar as propriedades do ridigbody2D para poder subir
-            rigidbody2d.gravityScale = 0;
+                //Alterar as propriedades do ridigbody2D para poder subir
+                rigidbody2d.gravityScale = 0;
 
-            //Direcionar o player para subir
-            Vector3 direcaoPulo = new Vector3(0, forcaDoPuloY, 0);
+                //Direcionar o player para subir
+                Vector3 direcaoPulo = new Vector3(forcaDoPuloX, forcaDoPuloY, 0);
 
-            //Mover o player para direção de subida
-            transform.position += direcaoPulo * velocidade * Time.deltaTime;
+                //Mover o player para direção de subida
+                transform.position += direcaoPulo * velocidade * Time.deltaTime;
+            }            
         }
         else
         {
@@ -110,6 +134,9 @@ public class MovimentarPlayer : MonoBehaviour
 
         //Desabilitar a variavel que permite o pulo
         estaPulando = false;
+
+        //Zerar a força do eixo X
+        forcaDoPuloX = 0;
     }
 
     /// <summary>
@@ -122,6 +149,56 @@ public class MovimentarPlayer : MonoBehaviour
         {
             StopCoroutine(coroutinePulo);
         }
-        StartCoroutine(TempoPulo());
+        coroutinePulo = StartCoroutine(TempoPulo());
+    }
+
+    private void PularDaParede()
+    {
+        //Verificar se está no chão para poder habilitar novamente o pulo da parede
+        if(limitePe.estaNoLimite == true)
+        {
+            pularDaParede = true;
+        }
+
+        //Verificar se é permitido pular da parede
+        if (pularDaParede == false) return;
+
+        /*
+         Verificar se o player não esta no chão e a cabeça não esta no limite
+         e se está em algumas das extremidades
+        */
+        if (limitePe.estaNoLimite == false && limiteCabeca.estaNoLimite == false
+            && (limiteDireita.estaNoLimite == true || limiteEsquerda.estaNoLimite == true))
+        {
+            //Obter a entrada do usuario para poder efetuar o pulo
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //Aplicar a força em x na direção contraria a parede que ele está encostado
+                if(limiteDireita.estaNoLimite == true)
+                {
+                    forcaDoPuloX = forcaDoPuloY * -1;
+                }
+                else if(limiteEsquerda.estaNoLimite == true)
+                {
+                    forcaDoPuloX = forcaDoPuloY;
+                }
+                else
+                {
+                    forcaDoPuloX = 0;
+                }
+
+                //Habilitar o pulo duplo
+                puloDuplo = true;
+
+                //Habilitar o pulo continuo
+                estaPulando = true;
+
+                //Desabilitar o pulo da parede
+                pularDaParede = false;
+
+                //Ativar um novo tempo de pulo
+                AtivarTempoPulo();
+            }
+        }
     }
 }
