@@ -201,4 +201,25 @@ public class MovimentarPlayer : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Reseta as forças do rigidbody2d do player
+    /// </summary>
+    public void ResetarFisicaDeMovimento()
+    {
+        rigidbody2d.linearVelocity = Vector3.zero;
+    }
+
+    /// <summary>
+    /// Arremessa o player para uma direção aleatória
+    /// </summary>
+    public void ArremessarPlayer()
+    {
+        //Sortear um numero entre 0 e 1 para poder definir qual direção será arremessado
+        int valorSorteado = new System.Random().Next(0,2);
+        int direcaoX = valorSorteado == 0 ? -1000 : 1000;
+
+        //Aplico a força no player
+        rigidbody2d.AddForce(new Vector2(direcaoX, 1000));
+    }
 }
