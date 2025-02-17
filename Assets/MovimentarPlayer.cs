@@ -4,6 +4,7 @@ using UnityEngine;
 public class MovimentarPlayer : MonoBehaviour
 {
     public FlipCorpoPlayer flipCorpo; //Código para efetuar o flip do personagem
+    public AnimacaoPlayer animacaoPlayer; //Código para ativar as animações
     public LimitePlayer limiteDireita;
     public LimitePlayer limiteEsquerda;
     public LimitePlayer limitePe;
@@ -47,6 +48,26 @@ public class MovimentarPlayer : MonoBehaviour
         else if (eixoX < 0)
         {
             flipCorpo.OlharParaEsquerda();
+        }
+
+        //Verificar se está no chão para poder fazer as animações de movimentação
+        if(limitePe.estaNoLimite == true)
+        {
+            //Verificar se está se movendo
+            if(eixoX != 0)
+            {
+                //Ativar animação de corrida
+                animacaoPlayer.PlayCorrendo();
+            }
+            else
+            {
+                //Ativar animação de parado
+                animacaoPlayer.PlayParado();
+            }
+        }
+        else
+        {
+            //Ativar animação de queda
         }
 
         //Definir a direção da movimentação
