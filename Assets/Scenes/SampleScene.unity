@@ -483,6 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movimentarPlayer: {fileID: 272124245}
+  animacaoPlayer: {fileID: 306833468}
 --- !u!1 &306833463
 GameObject:
   m_ObjectHideFlags: 0
