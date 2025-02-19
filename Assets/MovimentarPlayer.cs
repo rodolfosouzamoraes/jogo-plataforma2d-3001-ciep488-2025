@@ -68,6 +68,7 @@ public class MovimentarPlayer : MonoBehaviour
         else
         {
             //Ativar animação de queda
+            animacaoPlayer.PlayCaindo();
         }
 
         //Definir a direção da movimentação
@@ -80,11 +81,14 @@ public class MovimentarPlayer : MonoBehaviour
     private void Pular()
     {
         //Obter a entrada do usuário para efetuar o pulo
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             //Verificar se está apto a pular
             if(limitePe.estaNoLimite == true && estaPulando == false)
             {
+                //Ativa a animação do pulo
+                animacaoPlayer.PlayPulando();
+
                 //Habilitar o pulo
                 estaPulando = true;
 
@@ -99,6 +103,9 @@ public class MovimentarPlayer : MonoBehaviour
                 //Verificar se está apto a fazer um segundo pulo
                 if(puloDuplo == true)
                 {
+                    //Ativa a animação de pulo duplo
+                    animacaoPlayer.PlayPuloDuplo();
+
                     //Habilitar novamente o pulo
                     estaPulando = true;
 
@@ -191,8 +198,11 @@ public class MovimentarPlayer : MonoBehaviour
         if (limitePe.estaNoLimite == false && limiteCabeca.estaNoLimite == false
             && (limiteDireita.estaNoLimite == true || limiteEsquerda.estaNoLimite == true))
         {
+            //Ativa a animação de deslizar na parede
+            animacaoPlayer.PlayDeslizarParede();
+
             //Obter a entrada do usuario para poder efetuar o pulo
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Jump"))
             {
                 //Aplicar a força em x na direção contraria a parede que ele está encostado
                 if(limiteDireita.estaNoLimite == true)
@@ -207,6 +217,9 @@ public class MovimentarPlayer : MonoBehaviour
                 {
                     forcaDoPuloX = 0;
                 }
+
+                //Ativar a animação do pulo
+                animacaoPlayer.PlayPulando();
 
                 //Habilitar o pulo duplo
                 puloDuplo = true;
