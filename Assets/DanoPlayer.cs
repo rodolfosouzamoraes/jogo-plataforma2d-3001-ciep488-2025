@@ -10,8 +10,28 @@ public class DanoPlayer : MonoBehaviour
         //Ativar a animação do dano
         animacaoPlayer.PlayDano();
 
+        //Resetar a fisica do jogador
         movimentarPlayer.ResetarFisicaDeMovimento();
 
+        //Arremessar o jogador
         movimentarPlayer.ArremessarPlayer();
+
+        //Decrementar a vida do jogador
+        CanvasGameMng.Instance.DecrementarVidaJogador();
+    }
+
+    /// <summary>
+    /// Remove as movimentações e fisicas do player ao morrer
+    /// </summary>
+    public void MatarJogador()
+    {
+        //Remover a física do player
+        Destroy(movimentarPlayer.rigidbody2d);
+
+        //Remover a movimentação do player
+        Destroy(movimentarPlayer);
+
+        //Ativar animação de morte
+        animacaoPlayer.PlayMorte();
     }
 }

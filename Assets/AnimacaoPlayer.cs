@@ -63,4 +63,10 @@ public class AnimacaoPlayer : MonoBehaviour
     {
         animator.SetTrigger("Dano");
     }
+
+    public void PlayMorte()
+    {
+        animator.SetBool("Fim", true);
+        animator.SetTrigger("Morte");
+    }
 }
