@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,6 +28,9 @@ public class CanvasGameMng : MonoBehaviour
 
     private DanoPlayer danoPlayer; //Códigos para manipular a morte do player
 
+    public TextMeshProUGUI txtTotalItensColetados;//Texto que exibe o total de itens coletados
+    private int totalItensColetados;//Variável que armazena os itens coletados
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +39,12 @@ public class CanvasGameMng : MonoBehaviour
 
         //Pegar a referencia do dano player na cena
         danoPlayer = FindFirstObjectByType<DanoPlayer>();
+
+        //Zerar o total de itens coletados
+        totalItensColetados = 0;
+
+        //Exibir o valor atualizado no texto de total itens coletados
+        txtTotalItensColetados.text = $"x{totalItensColetados}";
     }
 
     // Update is called once per frame
@@ -104,5 +114,17 @@ public class CanvasGameMng : MonoBehaviour
 
         //Reiniciar o level
         ResetarLevelAtual();
+    }
+
+    /// <summary>
+    /// Método para poder incrementar no total de itens coletaveis 
+    /// </summary>
+    public void IncrementarItemColetavel()
+    {
+        //Incrementar o item na variável
+        totalItensColetados++;
+
+        //Atualizar o texto com o total de itens coletados
+        txtTotalItensColetados.text = $"x{totalItensColetados}";
     }
 }
