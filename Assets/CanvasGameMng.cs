@@ -26,10 +26,13 @@ public class CanvasGameMng : MonoBehaviour
 
     public bool fimDeJogo; //Diz se acabou o jogo
 
-    private DanoPlayer danoPlayer; //Códigos para manipular a morte do player
+    private PlayerControlador playerControlador; //Códigos para manipular a morte do player
 
     public TextMeshProUGUI txtTotalItensColetados;//Texto que exibe o total de itens coletados
     private int totalItensColetados;//Variável que armazena os itens coletados
+
+    public TextMeshProUGUI txtTempoDeJogo; //Texto exibido com o tempo do jogo
+    public float tempoJogo; //Diz o tempo que o level terá
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,19 +41,23 @@ public class CanvasGameMng : MonoBehaviour
         totalVidas = sptsVida.Length -1;
 
         //Pegar a referencia do dano player na cena
-        danoPlayer = FindFirstObjectByType<DanoPlayer>();
+        playerControlador = FindFirstObjectByType<PlayerControlador>();
 
         //Zerar o total de itens coletados
         totalItensColetados = 0;
 
         //Exibir o valor atualizado no texto de total itens coletados
         txtTotalItensColetados.text = $"x{totalItensColetados}";
+
+        //Atualizar o texto com o tempo atual do jogo
+        txtTempoDeJogo.text = $"{tempoJogo}";
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Contar o tempo do jogo
+        ContarTempo();
     }
 
     /// <summary>
@@ -88,7 +95,7 @@ public class CanvasGameMng : MonoBehaviour
         imgVida.sprite = sptsVida[totalVidas];
 
         //Desabilitar as funções do jogador
-        danoPlayer.MatarJogador();
+        playerControlador.DanoPlayer.MatarJogador();
 
         //Contar um tempo para poder reiniciar o level
         StartCoroutine(ReiniciarLevel());
@@ -126,5 +133,29 @@ public class CanvasGameMng : MonoBehaviour
 
         //Atualizar o texto com o total de itens coletados
         txtTotalItensColetados.text = $"x{totalItensColetados}";
+    }
+
+    /// <summary>
+    /// Método para poder contar o tempo do jogo
+    /// </summary>
+    public void ContarTempo()
+    {
+        //Verificar se o jogo acabou para parar de contar o tempo
+        if (fimDeJogo == true) return;
+
+        //Decrementar o tempo do jogo
+        tempoJogo -= Time.deltaTime;
+
+        //Verificar se o tempo acabou
+        if(tempoJogo <= 0)
+        {
+            //Finalizar jogo
+            FimDeJogo();
+        }
+        else
+        {
+            //Atualiza o tempo do jogo na tela
+            txtTempoDeJogo.text = ((int)tempoJogo).ToString();
+        }
     }
 }

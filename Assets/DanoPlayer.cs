@@ -26,10 +26,10 @@ public class DanoPlayer : MonoBehaviour
     public void MatarJogador()
     {
         //Remover a física do player
-        Destroy(movimentarPlayer.rigidbody2d);
+        movimentarPlayer.RemoverGravidade();
 
-        //Remover a movimentação do player
-        Destroy(movimentarPlayer);
+        //Remover as direções da física
+        movimentarPlayer.ResetarFisicaDeMovimento();
 
         //Ativar animação de morte
         animacaoPlayer.PlayMorte();
