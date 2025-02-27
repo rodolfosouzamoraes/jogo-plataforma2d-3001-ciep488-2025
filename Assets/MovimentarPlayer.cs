@@ -273,4 +273,19 @@ public class MovimentarPlayer : MonoBehaviour
         //Alterar o tipo do corpo da fisica para estático
         rigidbody2d.bodyType = RigidbodyType2D.Static;
     }
+
+    /// <summary>
+    /// Método para tirar as funções do player
+    /// </summary>
+    public void CongelarPlayer()
+    {
+        //Desabilitar as direções da física
+        ResetarFisicaDeMovimento();
+
+        //Remover a gravidade
+        RemoverGravidade();
+
+        //Ativar animação de parado
+        animacaoPlayer.PlayParado();
+    }
 }

@@ -158,4 +158,18 @@ public class CanvasGameMng : MonoBehaviour
             txtTempoDeJogo.text = ((int)tempoJogo).ToString();
         }
     }
+
+    /// <summary>
+    /// Método para finalizar o level
+    /// </summary>
+    public void CompletouLevel()
+    {
+        //Dizer que o jogo acabou
+        fimDeJogo = true;
+
+        //Congelar o player
+        playerControlador.MovimentarPlayer.CongelarPlayer();
+
+        //Exibir a tela final do level
+    }
 }
