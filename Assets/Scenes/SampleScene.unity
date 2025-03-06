@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &103242675
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1035,6 +1035,15 @@ MonoBehaviour:
   txtTotalItensColetados: {fileID: 979164466}
   txtTempoDeJogo: {fileID: 758179680}
   tempoJogo: 11
+  pnlTopo: {fileID: 1064775201}
+  pnlLevelCompletado: {fileID: 103242674}
+  txtTotalItensColetadosFinal: {fileID: 457468551}
+  imgIconeMedalha: {fileID: 1956765713}
+  sptsMedalhas:
+  - {fileID: 0}
+  - {fileID: 798120008028688222, guid: 553ef17976246a145a71fe7ddf7c70fc, type: 3}
+  - {fileID: 6654872727965518873, guid: 168bc39f374b6c145a61ff9b36ed5d4a, type: 3}
+  - {fileID: 5148233799245669906, guid: bd3bb9bf3bd6cda4ba1fc7373b0a8f60, type: 3}
 --- !u!1 &370713292
 GameObject:
   m_ObjectHideFlags: 0
@@ -3572,7 +3581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1358102940}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 355463739}
+        m_TargetAssemblyTypeName: CanvasGameMng, Assembly-CSharp
+        m_MethodName: ResetarLevelAtual
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1358102940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4793,7 +4814,7 @@ GameObject:
   - component: {fileID: 1956765714}
   - component: {fileID: 1956765713}
   m_Layer: 5
-  m_Name: imgMedalha
+  m_Name: imgIconeMedalha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

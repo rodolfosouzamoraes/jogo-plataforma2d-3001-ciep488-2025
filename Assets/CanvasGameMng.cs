@@ -34,6 +34,15 @@ public class CanvasGameMng : MonoBehaviour
     public TextMeshProUGUI txtTempoDeJogo; //Texto exibido com o tempo do jogo
     public float tempoJogo; //Diz o tempo que o level terá
 
+    public GameObject pnlTopo; //Variável com o painel do topo do canvas
+    public GameObject pnlLevelCompletado; //Variável com o painel do level completado
+    public TextMeshProUGUI txtTotalItensColetadosFinal; //Variável para exibir no final do jogo o total de itens coletados
+
+    public Image imgIconeMedalha; //Imagem que vai receber o sprite da medalha
+    public Sprite[] sptsMedalhas; //Vetor com os sprites das medalhas. 1 - Bronze, 2 - Prata, 3 - Ouro
+    private float qtdDeItensColetaveisNoLevel; //Armazena a quantidade de itens existente no inicio do jogo
+    private int idMedalha; //Identificador da medalha que o jogador conseguiu no level
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,6 +60,16 @@ public class CanvasGameMng : MonoBehaviour
 
         //Atualizar o texto com o tempo atual do jogo
         txtTempoDeJogo.text = $"{tempoJogo}";
+
+        //Atualizar o texto do total itens coletados no final do jogo
+        txtTotalItensColetadosFinal.text = $"x{totalItensColetados}";
+
+        //Ocultar a tela do level completado e exibir a tela do topo
+        pnlTopo.SetActive(true);
+        pnlLevelCompletado.SetActive(false);
+
+        //Obter a quantidade de itens coletáveis no inicio do jogo 
+        qtdDeItensColetaveisNoLevel = FindObjectsByType<ItemColetavel>(FindObjectsSortMode.None).Length;
     }
 
     // Update is called once per frame
@@ -171,5 +190,52 @@ public class CanvasGameMng : MonoBehaviour
         playerControlador.MovimentarPlayer.CongelarPlayer();
 
         //Exibir a tela final do level
+        StartCoroutine(ExibirTelaDoLevelCompletado());
+    }
+
+    /// <summary>
+    /// Método para exibir a tela final do jogo depois de um tempo
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator ExibirTelaDoLevelCompletado()
+    {
+        //Aguardar 3 segundos para continuar o código
+        yield return new WaitForSeconds(3f);
+
+        //Calcular a medalha obtida no level
+        CalcularMedalhaLevel();
+
+        //Exibir a tela do level completado e ocultar a tela do topo
+        pnlTopo.SetActive(false);
+        pnlLevelCompletado.SetActive(true);
+
+        //Fazer uma contagem dos itens coletados
+        int contagem = 0;
+        while(contagem < totalItensColetados)
+        {
+            //Incrementar a contagem
+            contagem++;
+
+            //Exibir a contagem atualizada na tela
+            txtTotalItensColetadosFinal.text = $"x{contagem}";
+
+            //Aguardar 0.1 segundo para poder reiniciar o loop do while e fazer a contagem novamente
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    /// <summary>
+    /// Método para descobrir qual medalha que o jogador conseguiu no level
+    /// </summary>
+    private void CalcularMedalhaLevel()
+    {
+        //Definir a porcentagem dos itens coletaveis obtidos no jogo
+        float porcentagem = (totalItensColetados / qtdDeItensColetaveisNoLevel) * 100;
+
+        //Definir qual medalha foi conquista com base na porcentagem
+        idMedalha = porcentagem < 50 ? 1 : porcentagem < 100 ? 2 : 3;
+
+        //Atualizar a imagem com a medalha correta
+        imgIconeMedalha.sprite = sptsMedalhas[idMedalha];
     }
 }
