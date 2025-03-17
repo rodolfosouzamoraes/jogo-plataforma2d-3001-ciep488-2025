@@ -7,13 +7,12 @@ public class DanoSpike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Verificar se é o player que colidiu com o spike
         if(collision.gameObject.tag == "Player" && houveColisao == false)
         {
-            //Diz que houve a colisão com o player
+            //Diz que houve colisão
             houveColisao = true;
 
-            //Efetua dano ao jogador
+            //Dano ao jogador
             collision.gameObject.GetComponent<DanoPlayer>().EfetuarDano();
 
             //Reabilitar o dano ao jogador
@@ -23,7 +22,7 @@ public class DanoSpike : MonoBehaviour
 
     private IEnumerator ResetarColisao()
     {
-        //Esperar 0.3 segundos para voltar a permitir a colisao
+        //Espera 0.3 segundo para poder haver uma nova colisão com o player
         yield return new WaitForSeconds(0.3f);
         houveColisao = false;
     }

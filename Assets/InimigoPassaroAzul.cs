@@ -2,92 +2,96 @@ using UnityEngine;
 
 public class InimigoPassaroAzul : MonoBehaviour
 {
-    public GameObject passaroAzul; //Gameobject do pai
-    public float velocidade;
-    public Vector3 posicaoFinal; //Posição para onde o passaro deve ir
-    private Vector3 posicaoInicial; //Posição onde o objeto começa
-    private Vector3 posicaoAlvo; //Direção para onde o passaro deve ir
-    private SpriteRenderer corpoPassaroAzul;
-    private Animator animator;
-    private bool estaMorto; //Diz se o passaro morreu ou não
+    public GameObject passaroAzul; //Variável com o gameobject pai
+    public float velocidade; //Velocidade de movimentação do passaro
+    public Vector3 posicaoFinal; //Posição final para onde o passáro deve ir
+    private SpriteRenderer corpoPassaroAzul; //Variável para manipular o sprite do passaro azul
+    private Vector3 posicaoInicial; //Posição ao iniciar o jogo
+    private Vector3 posicaoAlvo; //Posição para onde o passaro deve ir
+    private bool estaMorto; //Variável que diz se o passaro morreu
+    private Animator animator; //Controla a animação do passaro
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Configurar a posição inicial do pássaro
+        //Configura a posição inicial do passaro
         posicaoInicial = passaroAzul.transform.position;
 
-        //Dizer para onde o passaro deve ir de inicio
+        //Diz para onde o passaro deve ir
         posicaoAlvo = posicaoFinal;
 
-        //Configurar o animator
+        //Configura o animator
         animator = GetComponent<Animator>();
 
-        //Configurar o SpriteRenderer
+        //Configura o SpriteRenderer
         corpoPassaroAzul = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Movimentar o passaro
+        //Chamar a movimentação do passaro
         MovimentarPassaro();
 
-        //Calcular distancia entre os pontos
+        //Calcular a distancia entre o passaro e o alvo
         CalcularDistanciaAlvo();
     }
 
-
+    /// <summary>
+    /// Método para movimentar o passaro
+    /// </summary>
     private void MovimentarPassaro()
     {
-        //Movimentar o pássaro de um ponto ao outro
+        //Movimentar o passaro para uma posicao alvo
         passaroAzul.transform.position = Vector3.MoveTowards(
             passaroAzul.transform.position,
             posicaoAlvo,
             velocidade * Time.deltaTime
-            );
+        );
     }
 
     /// <summary>
-    /// Método para poder calcular a distancia entre o passaro e o alvo
-    /// e mudar sua direção
+    /// Calcular a distancia entre o passaro e o alvo para onde ele deve ir.
+    /// Inverter o corpo quando chegar na posição
     /// </summary>
     private void CalcularDistanciaAlvo()
     {
         //Verificar a distancia do passaro em relação ao alvo
-        if (Vector3.Distance(passaroAzul.transform.position, posicaoAlvo) < 0.001f)
+        if(Vector3.Distance(passaroAzul.transform.position, posicaoAlvo) < 0.001f)
         {
             //Verificar o flip do sprite para saber a nova direção do passaro
             if(corpoPassaroAzul.flipX == false)
             {
-                //Altera a posição alvo para o ponto inicial
+                //Alterar a posição alvo para a posição inicial
                 posicaoAlvo = posicaoInicial;
             }
             else
             {
-                //Altera a posição alvo para o ponto final
+                //Alterar a posição do alvo para a posição final
                 posicaoAlvo = posicaoFinal;
             }
-            //Inverto o flip do passaro para ele olhar para onde deve ir
+
+            //Inverter o flip do sprite para olhar em direção onde deve ir
             corpoPassaroAzul.flipX = !corpoPassaroAzul.flipX;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D colisao)
     {
-        if (colisao.gameObject.tag == "Player" && estaMorto == false) { 
-            //Dizer que o passaro morreu
+        //Verificar se o player colidiu com a cabeca do passaro
+        if(colisao.gameObject.tag == "Player" && estaMorto == false)
+        {
+            //Dizer que morreu o passaro
             estaMorto = true;
 
             //Arremessar o player
             colisao.GetComponent<PlayerControlador>().MovimentarPlayer.ArremessarPlayer();
 
-            //Ativar animação de morte
+            //Ativar a animação de morte
             animator.SetTrigger("Morte");
         }
     }
-    /// <summary>
-    /// Método acionado no fim da animação de morte do passaro
-    /// </summary>
+
     public void DestruirPassaro()
     {
         Destroy(passaroAzul);

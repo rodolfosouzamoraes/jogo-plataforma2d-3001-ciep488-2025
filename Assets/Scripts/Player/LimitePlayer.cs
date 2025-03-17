@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LimitePlayer : MonoBehaviour
 {
-    public bool estaNoLimite;
+    public bool estaNoLimite; //Diz se o player chegou no limite
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -19,4 +19,5 @@ public class LimitePlayer : MonoBehaviour
             estaNoLimite = false;
         }
     }
+
 }

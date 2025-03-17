@@ -3,28 +3,29 @@ using UnityEngine;
 public class ItemColetavel : MonoBehaviour
 {
     public Animator animator;
-    private bool coletouItem;
+
+    private bool coletouItem; //Variável para saber se o item foi coletado
 
     private void OnTriggerEnter2D(Collider2D colisao)
     {
-        //Verificar se o player colidiu com o item coletavel
-        if(colisao.gameObject.tag == "Player" && coletouItem == false)
+        //Verificar se foi o player que colidiu com o item e se já houve colisao
+        if(coletouItem == false && colisao.gameObject.tag == "Player")
         {
-            //Informar que o item foi coletado
+            //Diz que já coletou o item
             coletouItem = true;
 
-            //Ativar animação de coleta
+            //Ativa a animação de coleta do item
             animator.SetTrigger("Coletar");
 
-            //Incrementar o item no jogo
+            //Incrementar a coleta do item
             CanvasGameMng.Instance.IncrementarItemColetavel();
         }
     }
 
     /// <summary>
-    /// Método para destruir o objeto após o fim da animação de coleta
+    /// Método para poder destruir o item após o fim da animação de coleta
     /// </summary>
-    public void DestruirColetavel()
+    public void DestruirItem()
     {
         Destroy(gameObject);
     }

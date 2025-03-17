@@ -6,7 +6,7 @@ public class PlayerControlador : MonoBehaviour
     private AnimacaoPlayer animacaoPlayer;
     private DanoPlayer danoPlayer;
 
-    //Criar as propriedades das variáveis do player
+    //Definir as propriedades de acesso aos códigos do player
     public MovimentarPlayer MovimentarPlayer
     {
         get { return movimentarPlayer; }
@@ -20,15 +20,16 @@ public class PlayerControlador : MonoBehaviour
         get { return danoPlayer; }
     }
 
-    private void Awake()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
     {
-        //Obter a referencia do movimentar do player
+        //Obter a referencia do movimentar player
         movimentarPlayer = GetComponent<MovimentarPlayer>();
 
-        //Obter a referencia da animação do player
+        //Obter a referencia do animacaoPlayer
         animacaoPlayer = GetComponentInChildren<AnimacaoPlayer>();
 
-        //Obter a referencia do dano ao player
+        //Obter a refencia do danoPlayer
         danoPlayer = GetComponent<DanoPlayer>();
     }
 }

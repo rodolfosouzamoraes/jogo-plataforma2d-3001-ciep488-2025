@@ -6,13 +6,13 @@ public class FimDoLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D colisao)
     {
-        //Verificar se o player que colidiu
+        //Verificar se o player colidiu
         if(colisao.gameObject.tag == "Player")
         {
             //Ativo a animação do fim do level
             animator.SetBool("FimDoLevel", true);
 
-            //Finalizar o level
+            //Finalizo o level
             CanvasGameMng.Instance.CompletouLevel();
         }
     }

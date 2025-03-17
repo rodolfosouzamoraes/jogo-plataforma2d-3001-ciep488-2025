@@ -4,14 +4,13 @@ public class DanoPlayer : MonoBehaviour
 {
     public MovimentarPlayer movimentarPlayer;
     public AnimacaoPlayer animacaoPlayer;
-
     public void EfetuarDano()
     {
-        //Ativar a animação do dano
+        //Ativa animação de dano
         animacaoPlayer.PlayDano();
 
         //Resetar a fisica do jogador
-        movimentarPlayer.ResetarFisicaDeMovimento();
+        movimentarPlayer.ResetarFisicaDeMovimentacao();
 
         //Arremessar o jogador
         movimentarPlayer.ArremessarPlayer();
@@ -21,15 +20,15 @@ public class DanoPlayer : MonoBehaviour
     }
 
     /// <summary>
-    /// Remove as movimentações e fisicas do player ao morrer
+    /// Desalibita as moviventações e as fisicas do player ao morrer
     /// </summary>
     public void MatarJogador()
     {
-        //Remover a física do player
+        //Remover a gravidade do player
         movimentarPlayer.RemoverGravidade();
 
-        //Remover as direções da física
-        movimentarPlayer.ResetarFisicaDeMovimento();
+        //Remover a as forças direcionais do player
+        movimentarPlayer.ResetarFisicaDeMovimentacao();
 
         //Ativar animação de morte
         animacaoPlayer.PlayMorte();
