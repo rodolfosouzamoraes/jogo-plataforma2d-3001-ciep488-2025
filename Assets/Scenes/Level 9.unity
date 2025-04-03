@@ -15933,6 +15933,7 @@ GameObject:
   - component: {fileID: 1162597025}
   - component: {fileID: 1162597027}
   - component: {fileID: 1162597026}
+  - component: {fileID: 1162597028}
   m_Layer: 6
   m_Name: Portao
   m_TagString: Untagged
@@ -16057,6 +16058,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1162597028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162597024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4964846f2721741ad14ad9fe4d370b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chave: {fileID: 0}
+  velocidade: 0
+  cadeado: {fileID: 0}
 --- !u!1001 &1177239346
 PrefabInstance:
   m_ObjectHideFlags: 0
