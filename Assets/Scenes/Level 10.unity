@@ -14702,9 +14702,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04cf5e2cb330b249a924023275dedfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 0
-  cadeado: {fileID: 0}
-  grade: {fileID: 0}
+  velocidade: 100
+  cadeado: {fileID: 1931633217}
+  grade: {fileID: 935271789}
 --- !u!61 &1313160919
 BoxCollider2D:
   m_ObjectHideFlags: 0

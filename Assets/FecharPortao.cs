@@ -36,4 +36,22 @@ public class FecharPortao : MonoBehaviour
     {
         transform.gameObject.layer = 6;
     }
+
+    private void OnTriggerExit2D(Collider2D colisao)
+    {
+        if (colisao.gameObject.tag == "Player" && fechouPortao == false) 
+        {
+            //Definir para fechar o portao
+            fechouPortao = true;
+
+            //Mudar o boxcollider para um corpo rigido
+            GetComponent<BoxCollider2D>().isTrigger = false;
+
+            //Ativar cadeado depois de um tempo
+            Invoke("AtivarCadeado", 1f);
+
+            //Mudar layer depois que sair da area
+            Invoke("MudarLayer", 1f);
+        }
+    }
 }
