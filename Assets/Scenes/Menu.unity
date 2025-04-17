@@ -200,7 +200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7085435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ExibirPainel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7085435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +371,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ed7c3f35b9ece47955d3c82a63751a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paineis: []
+  paineis:
+  - {fileID: 1384981201}
+  - {fileID: 1337499838}
+  - {fileID: 1771505032}
+  - {fileID: 785964669}
+  - {fileID: 846592955}
 --- !u!1 &78163071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3109,7 +3126,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 572857375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ExibirPainel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &572857375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3904,7 +3933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785964670}
   m_Layer: 5
-  m_Name: pnlTutorial
+  m_Name: pnlTutorial - id 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4057,7 +4086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 846592956}
   m_Layer: 5
-  m_Name: pnlConfiguracoes
+  m_Name: pnlConfiguracoes - id 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6416,7 +6445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1337499839}
   m_Layer: 5
-  m_Name: pnlNiveis
+  m_Name: pnlNiveis - id 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6464,7 +6493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1384981202}
   m_Layer: 5
-  m_Name: pnlMenu
+  m_Name: pnlMenu - id 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6734,7 +6763,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1468256832}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ExibirPainel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1468256832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7020,7 +7061,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1494112701}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ExibirPainel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1494112701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7415,7 +7468,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1545388024}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ExibirPainel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1545388024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7721,7 +7786,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1605510047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ExibirPainel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1605510047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7841,7 +7918,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1621589840}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ExibirPainel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1621589840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8483,7 +8572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771505033}
   m_Layer: 5
-  m_Name: pnlSobre
+  m_Name: pnlSobre - id 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9071,7 +9160,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1889205431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: ExibirPainel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1889205431
 MonoBehaviour:
   m_ObjectHideFlags: 0

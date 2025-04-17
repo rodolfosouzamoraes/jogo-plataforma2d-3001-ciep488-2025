@@ -6,7 +6,8 @@ public class CanvasMenuMng : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //Exibir o painel menu ao iniciar o jogo
+        ExibirPainel(0);
     }
 
     public void ExibirPainel(int id)
@@ -17,5 +18,8 @@ public class CanvasMenuMng : MonoBehaviour
             //Desativar o painel
             painel.SetActive(false);
         }
+
+        //Exibir o painel desejado
+        paineis[id].SetActive(true);
     }
 }
