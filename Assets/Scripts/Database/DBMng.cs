@@ -27,6 +27,21 @@ public static class DBMng
             //Salvar o identificador da medalha
             PlayerPrefs.SetInt(MEDALHA_LEVEL+idLevel, idMedalha);
         }
+
+        //Habilitar o proximo level
+        PlayerPrefs.SetInt(HABILITA_LEVEL + (idLevel + 1), 1);
+    }
+
+    public static int BuscarLevelHabilitado(int idLevel)
+    {
+        //Retorna a infomação do level para saber se pode ser jogado
+        return PlayerPrefs.GetInt(HABILITA_LEVEL+idLevel);
+    }
+
+    public static int BuscarMedalhaLevel(int idLevel)
+    {
+        //Retorna a informação da medalha obtida no level
+        return PlayerPrefs.GetInt(MEDALHA_LEVEL+idLevel);
     }
 
 }

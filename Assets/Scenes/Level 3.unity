@@ -16389,6 +16389,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4938612596459397005, guid: a5c53ab126fe8fb4e965ca4781c700fe, type: 3}
+      propertyPath: tempoJogo
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
