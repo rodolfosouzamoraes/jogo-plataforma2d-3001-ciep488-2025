@@ -23,6 +23,9 @@ public static class DBMng
         if (totalColetaveis > qtdColetaveis) { 
             //Salvar a quantidade atualizada
             PlayerPrefs.SetInt(LEVEL_DATA + idLevel, totalColetaveis);
+
+            //Salvar o identificador da medalha
+            PlayerPrefs.SetInt(MEDALHA_LEVEL+idLevel, idMedalha);
         }
     }
 
