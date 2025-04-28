@@ -82,6 +82,9 @@ public class InimigoRabanete : MonoBehaviour
     /// Efetua um dano ao rabanete
     /// </summary>
     private void DanoRabanete(){
+        //Tocar audio dano Rabanete
+        AudioMng.Instance.PlayAudioDanoInimigo();
+
         //Efetuar dano ao player
         FindFirstObjectByType<PlayerControlador>().DanoPlayer.EfetuarDano();
 

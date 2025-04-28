@@ -19,6 +19,9 @@ public class ColetarChave : MonoBehaviour
     {
         if(colisao.gameObject.tag == "Player" && coletouChave == false)
         {
+            //Tocar audio da chave
+            AudioMng.Instance.PlayAudioChave();
+
             //Dizer que coletou a chave
             coletouChave = true;
 

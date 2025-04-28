@@ -9,6 +9,9 @@ public class DanoPlayer : MonoBehaviour
         //Verificar se o jogo acabou para deixar de tomar dano
         if (CanvasGameMng.Instance.fimDeJogo == true) return;
 
+        //Tocar audio dano
+        AudioMng.Instance.PlayAudioDanos();
+
         //Ativa animação de dano
         animacaoPlayer.PlayDano();
 
@@ -27,6 +30,9 @@ public class DanoPlayer : MonoBehaviour
     /// </summary>
     public void MatarJogador()
     {
+        //tocar audio morte player
+        AudioMng.Instance.PlayAudioMortePlayer();
+
         //Remover a gravidade do player
         movimentarPlayer.RemoverGravidade();
 

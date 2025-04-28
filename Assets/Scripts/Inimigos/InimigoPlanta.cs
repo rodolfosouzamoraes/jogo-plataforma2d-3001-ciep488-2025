@@ -40,6 +40,9 @@ public class InimigoPlanta : MonoBehaviour
     /// Método para instanciar o projetil através da animação de ataque da planta
     /// </summary>
     public void AtirarProjetil(){
+        //Tocar audio projetil
+        AudioMng.Instance.PlayAudioProjetil();
+
         //Instanciar o projetil
         GameObject novoProjetil = Instantiate(projetil);
 
@@ -71,6 +74,9 @@ public class InimigoPlanta : MonoBehaviour
     void OnTriggerEnter2D(Collider2D colisao)
     {
         if(colisao.gameObject.tag == "Player" && estaMorto == false){
+            //TOcar audio dano inimigo
+            AudioMng.Instance.PlayAudioDanoInimigo();
+
             //Diz que a planta morreu
             estaMorto = true;
 

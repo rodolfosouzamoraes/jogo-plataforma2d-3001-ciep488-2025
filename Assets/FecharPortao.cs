@@ -41,6 +41,9 @@ public class FecharPortao : MonoBehaviour
     {
         if (colisao.gameObject.tag == "Player" && fechouPortao == false) 
         {
+            //Tocar audio do portao
+            AudioMng.Instance.PlayAudioPortao();
+
             //Definir para fechar o portao
             fechouPortao = true;
 

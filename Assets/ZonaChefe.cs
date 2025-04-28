@@ -13,6 +13,9 @@ public class ZonaChefe : MonoBehaviour
     {
         if(colisao.gameObject.tag == "Player")
         {
+            //tocar audio do chefe
+            AudioMng.Instance.PlayAudioChefe();
+
             //Habilita movimentação do chefe
             chefeControlador.HabilitaMovimentacao();
             //Destruir o objeto

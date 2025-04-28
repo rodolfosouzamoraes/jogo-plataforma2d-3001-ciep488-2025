@@ -81,6 +81,9 @@ public class InimigoPassaroAzul : MonoBehaviour
         //Verificar se o player colidiu com a cabeca do passaro
         if(colisao.gameObject.tag == "Player" && estaMorto == false)
         {
+            //Tocar audio de dano inimigo
+            AudioMng.Instance.PlayAudioDanoInimigo();
+
             //Dizer que morreu o passaro
             estaMorto = true;
 

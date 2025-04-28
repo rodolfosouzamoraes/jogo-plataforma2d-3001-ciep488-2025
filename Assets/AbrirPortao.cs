@@ -34,6 +34,9 @@ public class AbrirPortao : MonoBehaviour
         //Verificar se o player colidiu e se a chave foi coletada
         if (colisao.gameObject.tag == "Player" && chave.ColetouChave == true)
         {
+            //tocar audio do portao
+            AudioMng.Instance.PlayAudioPortao();
+
             //Definir para abrir o portão
             abriuPortao = true;
 

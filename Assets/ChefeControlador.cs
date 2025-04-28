@@ -62,6 +62,9 @@ public class ChefeControlador : MonoBehaviour
 
         //Verificar se a vida do chefe acabou
         if (vidaChefe == 0) {
+            //Tocar audio morte chefe
+            AudioMng.Instance.PlayAudioMorteChefe();
+
             //Desabilitar a movimentação
             estaMovendo = false;
 
@@ -76,6 +79,9 @@ public class ChefeControlador : MonoBehaviour
         }
         else
         {
+            //Tocar audio do dano do inimigo
+            AudioMng.Instance.PlayAudioDanoInimigo();
+
             //Ativar animação de dano
             animator.SetTrigger("Dano");
         }
