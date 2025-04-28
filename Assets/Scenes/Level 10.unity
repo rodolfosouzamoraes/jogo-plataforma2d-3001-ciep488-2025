@@ -16311,6 +16311,10 @@ PrefabInstance:
       propertyPath: tempoJogo
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 6418344997284238618, guid: a5c53ab126fe8fb4e965ca4781c700fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

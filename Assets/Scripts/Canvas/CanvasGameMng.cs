@@ -73,6 +73,9 @@ public class CanvasGameMng : MonoBehaviour
     
         //Identificar o id do level
         idLevel = SceneManager.GetActiveScene().buildIndex;
+
+        //Incrementar 1 segundo no tempo do jogo
+        tempoJogo++;
     }
 
     private void Update()
