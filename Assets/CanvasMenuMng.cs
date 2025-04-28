@@ -5,12 +5,18 @@ using UnityEngine.UI;
 
 public class CanvasMenuMng : MonoBehaviour
 {
+    [Header("Configurações Painel Niveis")]
     public GameObject[] paineis;
     public GameObject[] cadeadosLevel;
     public GameObject[] pnlsQtdLevel;
     public GameObject[] medalhasLevel;
     public TextMeshProUGUI[] txtsItensColetadosLevel;
     public Sprite[] spritesMedalha;
+
+    [Header("Configurações Painel Audio")]
+    public Slider sldVFX;
+    public Slider sldMusica;
+    private Volume volume;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +25,12 @@ public class CanvasMenuMng : MonoBehaviour
 
         //Configurar painel niveis
         ConfigurarPainelNiveis();
+
+        //Configurar painel audio
+        ConfigurarPainelAudio();
+
+        //Tocar o audio do menu
+        AudioMng.Instance.PlayAudioMenu();
     }
 
     public void ExibirPainel(int id)
@@ -92,5 +104,57 @@ public class CanvasMenuMng : MonoBehaviour
             //Carregar o level solicitado
             SceneManager.LoadScene(idLevel);
         }
+    }
+
+    private void ConfigurarPainelAudio()
+    {
+        //Obter os volumes salvos na memória
+        volume = DBMng.ObterVolume();
+
+        //Atualizar os values dos slides dos volumes
+        sldVFX.value = volume.vfx;
+        sldMusica.value = volume.musica;
+
+        //Atualizar os volumes no AudioMng
+        AudioMng.Instance.MudarVolume(volume);
+    }
+
+    private void AtualizarVolumes()
+    {
+        //Obter o volume salvo
+        volume = DBMng.ObterVolume();
+
+        //Atualizar no AudioMng
+        AudioMng.Instance.MudarVolume(volume);
+    }
+
+    /// <summary>
+    /// Método utilizado no slider do volume vfx
+    /// </summary>
+    public void MudarVolumeVFX()
+    {
+        //Salvar o novo volume
+        DBMng.SalvarVolume(sldVFX.value, volume.musica);
+
+        //Atualizar os volumes no audio mng
+        AtualizarVolumes();
+    }
+
+    public void MudarVolumeMusica()
+    {
+        //Salvar o novo volume
+        DBMng.SalvarVolume(volume.vfx, sldMusica.value);
+
+        //Atualizar os volumes no audio mng
+        AtualizarVolumes();
+    }
+
+    /// <summary>
+    /// Método utilizado nos botões do menu
+    /// </summary>
+    public void PlayAudioClick()
+    {
+        //Tocar o audio do click do mouse
+        AudioMng.Instance.PlayAudioClick();
     }
 }

@@ -94,4 +94,9 @@ public class AnimacaoPlayer : MonoBehaviour
         animator.SetBool("Fim", true);
         animator.SetTrigger("Morte");
     }
+
+    public void PlayAudioMovimentacao()
+    {
+        AudioMng.Instance.PlayAudioCorrer();
+    }
 }

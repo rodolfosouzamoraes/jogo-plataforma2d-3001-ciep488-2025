@@ -213,6 +213,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7085435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +442,8 @@ MonoBehaviour:
   - {fileID: 798120008028688222, guid: b6ccde8d8b56ef941bf8dc6ea567e6dd, type: 3}
   - {fileID: 6654872727965518873, guid: c61626c3365807545b7399f6ea0126b1, type: 3}
   - {fileID: 5148233799245669906, guid: 9b2ee3d6a276e3545a291658c187b995, type: 3}
+  sldVFX: {fileID: 1472489095}
+  sldMusica: {fileID: 851486900}
 --- !u!1 &78163071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,6 +3296,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &572857375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4349,7 +4375,19 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: MudarVolumeMusica
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &871331085
 GameObject:
   m_ObjectHideFlags: 0
@@ -6906,7 +6944,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1454577806}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1454577806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7039,6 +7089,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1468256832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7166,7 +7228,19 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: MudarVolumeVFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1487339311
 GameObject:
   m_ObjectHideFlags: 0
@@ -7329,6 +7403,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
         m_MethodName: ExibirPainel
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7744,6 +7830,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1545388024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,6 +8160,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1605510047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8186,6 +8296,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
         m_MethodName: ExibirPainel
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9526,6 +9648,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 38046122}
+        m_TargetAssemblyTypeName: CanvasMenuMng, Assembly-CSharp
+        m_MethodName: PlayAudioClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1889205431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10333,6 +10467,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080972296}
   m_CullTransparentMesh: 1
+--- !u!1001 &538955208886517197
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2422576282659774236, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_Name
+      value: AudioMng
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923198468096054537, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8d8a86030ba3594886fe62e61974e37, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10340,3 +10531,4 @@ SceneRoots:
   - {fileID: 1507142264}
   - {fileID: 38046121}
   - {fileID: 532350571}
+  - {fileID: 538955208886517197}
