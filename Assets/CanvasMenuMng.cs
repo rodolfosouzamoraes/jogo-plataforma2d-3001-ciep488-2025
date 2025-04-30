@@ -31,6 +31,9 @@ public class CanvasMenuMng : MonoBehaviour
 
         //Tocar o audio do menu
         AudioMng.Instance.PlayAudioMenu();
+
+        //Ocultar a tela de loading
+        CanvasLoadingMng.Instance.OcultarPainelLoading();
     }
 
     public void ExibirPainel(int id)
@@ -92,6 +95,9 @@ public class CanvasMenuMng : MonoBehaviour
 
     public void IniciarLevel1()
     {
+        //Exibir tela de loading
+        CanvasLoadingMng.Instance.ExibirPainelLoading();
+
         //Carregar o level 1
         SceneManager.LoadScene(1);
     }
@@ -101,6 +107,9 @@ public class CanvasMenuMng : MonoBehaviour
         //Verificar se o cadeado está habilitado
         if (cadeadosLevel[idLevel].activeSelf == false)
         {
+            //Exibir tela de loading
+            CanvasLoadingMng.Instance.ExibirPainelLoading();
+
             //Carregar o level solicitado
             SceneManager.LoadScene(idLevel);
         }
@@ -156,5 +165,10 @@ public class CanvasMenuMng : MonoBehaviour
     {
         //Tocar o audio do click do mouse
         AudioMng.Instance.PlayAudioClick();
+    }
+
+    public void FecharJogo()
+    {
+        Application.Quit();
     }
 }

@@ -82,6 +82,9 @@ public class CanvasGameMng : MonoBehaviour
 
         //Tocar o audio do game
         AudioMng.Instance.PlayAudioLevel();
+
+        //Ocultar tela loading
+        CanvasLoadingMng.Instance.OcultarPainelLoading();
     }
 
     private void Update()
@@ -250,12 +253,18 @@ public class CanvasGameMng : MonoBehaviour
 
     public void ProximoLevel()
     {
+        //Exbir painel Loading
+        CanvasLoadingMng.Instance.ExibirPainelLoading();
+
         //Carregar o proximo level
         SceneManager.LoadScene(idLevel + 1);
     }
 
     public void VoltarMenu()
     {
+        //Exibir painel loading
+        CanvasLoadingMng.Instance.ExibirPainelLoading();
+
         SceneManager.LoadScene(0);
     }
 
@@ -264,5 +273,13 @@ public class CanvasGameMng : MonoBehaviour
         //Obter os volumes da memoria e atualizar no audiomng
         Volume volume = DBMng.ObterVolume();
         AudioMng.Instance.MudarVolume(volume);
+    }
+
+    public void ReiniciarLevelPelaUI()
+    {
+        //Exibir tela loading
+        CanvasLoadingMng.Instance.ExibirPainelLoading();
+
+        SceneManager.LoadScene(idLevel);
     }
 }
