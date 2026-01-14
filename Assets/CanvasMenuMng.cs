@@ -36,6 +36,7 @@ public class CanvasMenuMng : MonoBehaviour
         CanvasLoadingMng.Instance.OcultarPainelLoading();
     }
 
+
     public void ExibirPainel(int id)
     {
         //Ocultar todos os outros paineis
